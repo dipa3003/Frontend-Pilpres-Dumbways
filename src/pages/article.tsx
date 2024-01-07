@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 // import { TArtikel } from "../types/artikel";
 
 export default function Article() {
@@ -8,6 +9,11 @@ export default function Article() {
     const {
         state: { title, date, author },
     } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <Navbar />
