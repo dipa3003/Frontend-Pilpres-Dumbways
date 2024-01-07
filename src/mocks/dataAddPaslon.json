@@ -1,0 +1,23 @@
+[
+    {
+        "url": "paslon.jpg",
+        "nama": "Sinti maimuloh",
+        "nomor": 1,
+        "visiMisi": ["Free wifi all the day", "Weekend liburan bukan coding", "Programmer gaji 2x UMR di Konoha"],
+        "koalisi": ["Partai Bintang", "Partai Burung Hantu", "Partai Badak Merah"]
+    },
+    {
+        "url": "paslon2.jpg",
+        "nama": "budiman suwitmo",
+        "nomor": 2,
+        "visiMisi": ["Gratis pulsa selama 2 bulan", "Jalan jalan bersama", "Liburan ke jepang"],
+        "koalisi": ["Partai Bintang", "Partai Burung Hantu", "Partai Badak Merah"]
+    },
+    {
+        "url": "paslon3.jpg",
+        "nama": "alex kurniawan",
+        "nomor": 3,
+        "visiMisi": ["Gratis kaos dan tumbler", "Car free day rutin", "Acara makan bersama weekend"],
+        "koalisi": ["Partai Bintang", "Partai Burung Hantu", "Partai Badak Merah"]
+    }
+]
