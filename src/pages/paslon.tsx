@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import dataPaslon from "../mocks/dataAddPaslon.json";
+import { useEffect, useState } from "react";
+
+type TDataPaslon = {
+    url: string;
+    nama: string;
+    nomor: number;
+    visiMisi: string[];
+    koalisi: string[];
+};
 
 export default function PaslonPage() {
+    const [data, setData] = useState<TDataPaslon[] | null>(null);
+
+    useEffect(() => {
+        setData(dataPaslon);
+    }, []);
+
     return (
         <>
             <Navbar />
@@ -18,7 +34,32 @@ export default function PaslonPage() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="border text-center mb-8 even:bg-gray-100">
+                        {data &&
+                            data.map((item, i) => (
+                                <tr className="border text-center mb-8 even:bg-gray-100" key={i}>
+                                    <td>{item.nomor}</td>
+                                    <td className="h-40">
+                                        <img src={item.url} alt="img" className="h-40 w-full object-cover" />
+                                    </td>
+                                    <td>{item.nama}</td>
+                                    <td className="text-justify pl-4">
+                                        {item.visiMisi.map((visiMisi, i) => (
+                                            <ul className="list-disc list-inside" key={i}>
+                                                <li>{visiMisi}</li>
+                                            </ul>
+                                        ))}
+                                    </td>
+                                    <td className="text-justify pl-4">
+                                        {item.koalisi.map((koalisi, i) => (
+                                            <ul className="list-disc list-inside" key={i}>
+                                                <li>{koalisi}</li>
+                                            </ul>
+                                        ))}
+                                    </td>
+                                </tr>
+                            ))}
+
+                        {/* <tr className="border text-center mb-8 even:bg-gray-100">
                             <td>1</td>
                             <td className="h-40">
                                 <img src="paslon.jpg" alt="img" className="h-40 w-full object-cover" />
@@ -59,28 +100,7 @@ export default function PaslonPage() {
                                     <li>Partai kuda nil</li>
                                 </ul>
                             </td>
-                        </tr>
-                        <tr className="border text-center mb-8 even:bg-gray-100">
-                            <td>1</td>
-                            <td className="h-40">
-                                <img src="paslon.jpg" alt="img" className="h-40 w-full object-cover" />
-                            </td>
-                            <td>sintia muailono</td>
-                            <td className="text-justify pl-4">
-                                <ul className="list-disc list-inside">
-                                    <li>Gratis wifi setahun bos</li>
-                                    <li>Gratis wifi setahun bos</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus repellat quaerat provident doloremque asperiores quisquam similique aspernatur voluptatibus fuga! Facere.</li>
-                                </ul>
-                            </td>
-                            <td className="text-justify pl-4">
-                                <ul className="list-disc list-inside">
-                                    <li>Partai kuda nil</li>
-                                    <li>Partai kuda nil</li>
-                                    <li>Partai kuda nil</li>
-                                </ul>
-                            </td>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </table>
                 <div className="flex justify-center mt-8">
