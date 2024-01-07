@@ -1,44 +1,30 @@
 [
-    [
-        {
-            "nama": "Partai Bintang",
-            "ketua": "Tomas huehehe"
-        },
-        {
-            "nama": "Partai Burung Hantu",
-            "ketua": "Budi huehehe"
-        },
-        {
-            "nama": "Partai Badak Merah",
-            "ketua": "Umar huehehe"
-        }
-    ],
-    [
-        {
-            "nama": "Partai Gajah",
-            "ketua": "Tomas huehehe"
-        },
-        {
-            "nama": "Partai Burung Elang",
-            "ketua": "Budi huehehe"
-        },
-        {
-            "nama": "Partai Singa Merah",
-            "ketua": "Umar huehehe"
-        }
-    ],
-    [
-        {
-            "nama": "Partai Bulan",
-            "ketua": "Tomas huehehe"
-        },
-        {
-            "nama": "Partai Burung Camar",
-            "ketua": "Budi huehehe"
-        },
-        {
-            "nama": "Partai Gajah Berdiri",
-            "ketua": "Umar huehehe"
-        }
-    ]
+    {
+        "nama": "Partai Bintang",
+        "ketua": "Bejo",
+        "visiMisi": "menghijaukan bumi",
+        "alamat": "Hutan amazon timur",
+        "paslonId": 1
+    },
+    {
+        "nama": "Partai Gajah",
+        "ketua": "Slamet",
+        "visiMisi": "menghijaukan bumi",
+        "alamat": "Hutan amazon timur",
+        "paslonId": 2
+    },
+    {
+        "nama": "Partai Singa",
+        "ketua": "Bumbum",
+        "visiMisi": "menghijaukan bumi",
+        "alamat": "Hutan amazon timur",
+        "paslonId": 1
+    },
+    {
+        "nama": "Partai Kuda Nil",
+        "ketua": "Tom jerry",
+        "visiMisi": "menghijaukan bumi",
+        "alamat": "Hutan amazon timur",
+        "paslonId": 3
+    }
 ]

@@ -119,12 +119,15 @@ export default function Vote() {
                                     </ul>
                                 ))}
                                 <p className="mt-2">Koalisi :</p>
-
-                                {partai[currentIndex].map((item, i) => (
-                                    <ul className="list-disc list-inside" key={i}>
-                                        <li>{item.nama}</li>
-                                    </ul>
-                                ))}
+                                {partai.map((item, i) => {
+                                    if (item.paslonId === allDataPaslon[currentIndex].nomor) {
+                                        return (
+                                            <ul className="list-disc list-inside" key={i}>
+                                                <li>{item.nama}</li>
+                                            </ul>
+                                        );
+                                    }
+                                })}
                             </div>
                         </div>
                     </div>

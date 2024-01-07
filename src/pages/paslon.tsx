@@ -58,49 +58,6 @@ export default function PaslonPage() {
                                     </td>
                                 </tr>
                             ))}
-
-                        {/* <tr className="border text-center mb-8 even:bg-gray-100">
-                            <td>1</td>
-                            <td className="h-40">
-                                <img src="paslon.jpg" alt="img" className="h-40 w-full object-cover" />
-                            </td>
-                            <td>sintia muailono</td>
-                            <td className="text-justify pl-4">
-                                <ul className="list-disc list-inside">
-                                    <li>Gratis wifi setahun bos</li>
-                                    <li>Gratis wifi setahun bos</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus repellat quaerat provident doloremque asperiores quisquam similique aspernatur voluptatibus fuga! Facere.</li>
-                                </ul>
-                            </td>
-                            <td className="text-justify pl-4">
-                                <ul className="list-disc list-inside">
-                                    <li>Partai kuda nil</li>
-                                    <li>Partai kuda nil</li>
-                                    <li>Partai kuda nil</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr className="border text-center mb-8 even:bg-gray-100">
-                            <td>1</td>
-                            <td className="h-40">
-                                <img src="paslon.jpg" alt="img" className="h-40 w-full object-cover" />
-                            </td>
-                            <td>sintia muailono</td>
-                            <td className="text-justify pl-4">
-                                <ul className="list-disc list-inside">
-                                    <li>Gratis wifi setahun bos</li>
-                                    <li>Gratis wifi setahun bos</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus repellat quaerat provident doloremque asperiores quisquam similique aspernatur voluptatibus fuga! Facere.</li>
-                                </ul>
-                            </td>
-                            <td className="text-justify pl-4">
-                                <ul className="list-disc list-inside">
-                                    <li>Partai kuda nil</li>
-                                    <li>Partai kuda nil</li>
-                                    <li>Partai kuda nil</li>
-                                </ul>
-                            </td>
-                        </tr> */}
                     </tbody>
                 </table>
                 <div className="flex justify-center mt-8">
