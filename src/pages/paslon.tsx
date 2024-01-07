@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import dataPaslon from "../mocks/dataAddPaslon.json";
 import { useEffect, useState } from "react";
+import dataPartai from "../mocks/dataAddPartai.json";
 
 type TDataPaslon = {
     url: string;
@@ -50,11 +51,15 @@ export default function PaslonPage() {
                                         ))}
                                     </td>
                                     <td className="text-justify pl-4">
-                                        {item.koalisi.map((koalisi, i) => (
-                                            <ul className="list-disc list-inside" key={i}>
-                                                <li>{koalisi}</li>
-                                            </ul>
-                                        ))}
+                                        {dataPartai.map((partai, i) => {
+                                            if (partai.paslonId === item.nomor) {
+                                                return (
+                                                    <ul className="list-disc list-inside" key={i}>
+                                                        <li>{partai.nama}</li>
+                                                    </ul>
+                                                );
+                                            }
+                                        })}
                                     </td>
                                 </tr>
                             ))}

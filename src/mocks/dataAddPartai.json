@@ -2,29 +2,33 @@
     {
         "nama": "Partai Bintang",
         "ketua": "Bejo",
-        "visiMisi": "menghijaukan bumi",
+        "visiMisi": ["Manusia pindah ke mars", "Weekend liburan bukan coding", "Programmer gaji 2x UMR di Konoha"],
         "alamat": "Hutan amazon timur",
+        "image": "partai.jpg",
         "paslonId": 1
     },
     {
         "nama": "Partai Gajah",
         "ketua": "Slamet",
-        "visiMisi": "menghijaukan bumi",
+        "visiMisi": ["Menghijaukan bumi", "Weekend liburan bukan coding", "Programmer gaji 2x UMR di Konoha"],
         "alamat": "Hutan amazon timur",
+        "image": "partai.jpg",
         "paslonId": 2
     },
     {
         "nama": "Partai Singa",
         "ketua": "Bumbum",
-        "visiMisi": "menghijaukan bumi",
+        "visiMisi": ["konspirasi bumi bulat", "Weekend liburan bukan coding", "Programmer gaji 2x UMR di Konoha"],
         "alamat": "Hutan amazon timur",
+        "image": "partai.jpg",
         "paslonId": 1
     },
     {
         "nama": "Partai Kuda Nil",
         "ketua": "Tom jerry",
-        "visiMisi": "menghijaukan bumi",
+        "visiMisi": ["Medan jadi ibukota", "Weekend liburan bukan coding", "Programmer gaji 2x UMR di Konoha"],
         "alamat": "Hutan amazon timur",
+        "image": "partai.jpg",
         "paslonId": 3
     }
 ]
