@@ -41,6 +41,13 @@ export default function Vote() {
         setModalVote(!modalVote);
     }
 
+    const handleResetPaslon = () => {
+        console.log("you reset vote a paslon");
+    };
+    const handleSubmitPaslon = () => {
+        console.log("you vote a paslon");
+    };
+
     return (
         <>
             <Navbar />
@@ -69,9 +76,9 @@ export default function Vote() {
                                     </div>
                                 </div>
                             ))}
-                        <span onClick={() => handleModalVote()}>
-                            <Button classCustom={"bg-lime-600 rounded-full mt-6 text-white"}>MASUKAN SUARAMU</Button>
-                        </span>
+                        <Button onClick={handleModalVote} classCustom={"bg-lime-600 rounded-full mt-6 text-white"}>
+                            MASUKAN SUARAMU
+                        </Button>
                     </div>
                 </div>
 
@@ -92,8 +99,14 @@ export default function Vote() {
                                 ))}
                         </div>
                         <div className="flex justify-end gap-4">
-                            <Button classCustom={"bg-white text-black rounded-full mt-6"}>Reset</Button>
-                            <Button classCustom={"bg-lime-600 text-white rounded-full mt-6"}>Submit</Button>
+                            <Button onClick={handleResetPaslon} classCustom={"bg-white text-black rounded-full mt-6"}>
+                                Reset
+                            </Button>
+                            <Button onClick={handleSubmitPaslon} classCustom={"bg-lime-600 text-white rounded-full mt-6"}>
+                                Submit
+                            </Button>
+                            {/* <button className=" h-10 px-6 font-semibold bg-white text-black rounded-full mt-6">Reset</button>
+                            <button className=" h-10 px-6 font-semibold bg-lime-600 text-white rounded-full mt-6">Submit</button> */}
                         </div>
                     </div>
                 )}

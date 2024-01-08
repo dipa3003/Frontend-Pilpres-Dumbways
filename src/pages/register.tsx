@@ -3,6 +3,9 @@ import Button from "../components/elements/Button";
 import InputForm from "../components/elements/InputForm";
 
 export default function Register() {
+    const handleRegister = () => {
+        console.log("you register");
+    };
     return (
         <div className="flex justify-center min-h-screen items-center bg-[url('laut.jpg')] bg-cover">
             <div className="w-full max-w-xs">
@@ -15,7 +18,9 @@ export default function Register() {
                     <InputForm label={"Username"} type={"text"} name={"username"} placeholder={"example@mail.com"} id={"username"} />
                     <InputForm label={"Password"} type={"text"} name={"password"} placeholder={"******"} id={"password"} />
                 </form>
-                <Button classCustom="bg-lime-600 w-full">Create Account</Button>
+                <Button onClick={handleRegister} classCustom="bg-lime-600 w-full">
+                    Create Account
+                </Button>
                 <p className="font-medium mt-8 text-center text-black ">
                     Already have an account?{" "}
                     <Link to="/login" className="text-blue-600 italic font-bold">
