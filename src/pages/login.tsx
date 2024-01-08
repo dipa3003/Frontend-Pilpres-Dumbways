@@ -1,10 +1,11 @@
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/elements/Button";
 import InputForm from "../components/elements/InputForm";
-// import { useState } from "react";
 
 export default function Login() {
     // const [isLogin, setIsLogin] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -18,9 +19,9 @@ export default function Login() {
         if (localStorage.getItem("username") === "dipa@gmail.com" && localStorage.getItem("password") === "3003") {
             // setIsLogin(true);
             // window.location.href = "/";
-            redirect("/");
+            navigate("/", { replace: true });
+            console.log("Login success!");
         }
-        console.log("Login success!");
     };
     return (
         <div className="flex justify-center min-h-screen items-center bg-[url('login-img.jpg')] bg-cover">
