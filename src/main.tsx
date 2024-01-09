@@ -13,6 +13,7 @@ import Article from "./pages/article.tsx";
 import FormAddPaslon from "./pages/formAddPaslon.tsx";
 import FormAddPartai from "./pages/formAddPartai.tsx";
 import AdminPage from "./pages/admin.tsx";
+import FormAddBlog from "./pages/formAddBlog.tsx";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
     {
         path: "/add-partai",
         element: <FormAddPartai />,
+    },
+    {
+        path: "/add-blog",
+        element: <FormAddBlog />,
     },
     {
         path: "/admin",

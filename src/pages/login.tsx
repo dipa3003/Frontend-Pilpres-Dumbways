@@ -1,9 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/elements/Button";
 import InputForm from "../components/elements/InputForm";
+import { login } from "../services/auth.service";
+import { useState } from "react";
 
 export default function Login() {
-    // const [isLogin, setIsLogin] = useState(false);
+    const [loginFailed, setLoginFailed] = useState("");
+    localStorage.removeItem("token");
 
     const navigate = useNavigate();
 
@@ -12,16 +15,30 @@ export default function Login() {
         const username = e.currentTarget.username.value;
         const password = e.currentTarget.password.value;
 
-        //LOGIC AUTH ke DB (sementara pake localstorage)
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
+        const newLogin = {
+            username,
+            password,
+        };
 
-        if (localStorage.getItem("username") === "dipa@gmail.com" && localStorage.getItem("password") === "3003") {
-            // setIsLogin(true);
-            // window.location.href = "/";
-            navigate("/", { replace: true });
-            console.log("Login success!");
-        }
+        login(newLogin, (status, res) => {
+            if (status) {
+                localStorage.setItem("token", res);
+                navigate("/", { replace: true });
+            } else {
+                setLoginFailed(res);
+                console.log(res);
+            }
+        });
+        //LOGIC AUTH ke DB (sementara pake localstorage)
+        // localStorage.setItem("username", username);
+        // localStorage.setItem("password", password);
+
+        // if (localStorage.getItem("username") === "dipa@gmail.com" && localStorage.getItem("password") === "3003") {
+        //     // setIsLogin(true);
+        //     // window.location.href = "/";
+        // navigate("/", { replace: true });
+        //     console.log("Login success!");
+        // }
     };
     return (
         <div className="flex justify-center min-h-screen items-center bg-[url('login-img.jpg')] bg-cover">
@@ -35,6 +52,7 @@ export default function Login() {
                         Sign in
                     </Button>
                 </form>
+                {loginFailed && <p className="text-red font-bold mt-2">{loginFailed}</p>}
                 <p className="font-medium mt-8 text-center text-white ">
                     Don't have an account?{" "}
                     <Link to="/register" className="text-blue-600 italic font-bold">

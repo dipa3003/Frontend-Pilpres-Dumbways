@@ -13,7 +13,7 @@ export default function Cards(Props: TArtikel) {
                     <p className="bg-red-600 text-white p-1 inline-block rounded-lg">{date.toUpperCase()}</p>
                     <h1 className="text-md font-bold mt-2">
                         <Link to="article" preventScrollReset={false} state={{ date: date, title: title, author: author }}>
-                            {title.toUpperCase()}
+                            {title.substring(0, 62).toUpperCase()}...
                         </Link>
                     </h1>
                     <p>{author.toLowerCase()}</p>

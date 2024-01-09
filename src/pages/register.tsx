@@ -1,27 +1,39 @@
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/elements/Button";
 import InputForm from "../components/elements/InputForm";
+import { register } from "../services/auth.service";
+import { useState } from "react";
 
 export default function Register() {
+    const [registerFailed, setRegisterFailed] = useState("");
+
     const navigate = useNavigate();
     const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const fullname = e.currentTarget.fullname.value;
         const address = e.currentTarget.address.value;
-        const gender = e.currentTarget.gender.value;
+        const sex = e.currentTarget.gender.value;
         const username = e.currentTarget.username.value;
         const password = e.currentTarget.password.value;
         const newUser = {
             fullname,
             address,
-            gender,
+            sex,
             username,
             password,
         };
 
+        register(newUser, (ket, res) => {
+            if (ket && res === "OK") {
+                navigate("/login");
+            } else {
+                setRegisterFailed(res);
+                console.log("error res:", res);
+            }
+        });
+
         //LOGIC POST NEW USER TO API DB WILL BE HERE
-        console.log("register new user success:", newUser);
-        navigate("/login");
+        // console.log("register new user success:", newUser);
     };
     return (
         <div className="flex justify-center min-h-screen items-center bg-[url('laut.jpg')] bg-cover">
@@ -38,6 +50,8 @@ export default function Register() {
                         Create Account
                     </Button>
                 </form>
+                {registerFailed && <p className="text-red font-bold mt-2">{registerFailed}</p>}
+
                 <p className="font-medium mt-8 text-center text-black ">
                     Already have an account?{" "}
                     <Link to="/login" className="text-blue-600 italic font-bold">

@@ -11,9 +11,15 @@ export default function Navbar() {
             </div>
             <div className="flex gap-5 flex-row">
                 <Link to="/partai">Partai</Link>|<Link to="/paslon">Paslon</Link>|<Link to="/vote">Voting</Link>
-                <Link to="/login" className="bg-white text-black px-3 py-1 rounded-md font-bold">
-                    Login
-                </Link>
+                {localStorage.getItem("token") ? (
+                    <Link to="/login" className="bg-white text-black px-3 py-1 rounded-md font-bold">
+                        Logout
+                    </Link>
+                ) : (
+                    <Link to="/login" className="bg-white text-black px-3 py-1 rounded-md font-bold">
+                        Login
+                    </Link>
+                )}
             </div>
         </nav>
     );
