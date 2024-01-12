@@ -1,29 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Button from "../components/elements/Button";
 import InputForm from "../components/elements/InputForm";
 import { useEffect } from "react";
+import { postBlog } from "../services/blog.service";
 
 const FormAddBlog = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    const handleAddBlog = (e: React.FormEvent<HTMLFormElement>) => {
+    const navigate = useNavigate();
+
+    const handleAddBlog = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // const title = e.currentTarget.title.value;
+
         const title = e.currentTarget.judul.value;
         const description = e.currentTarget.description.value;
-        const image = e.currentTarget.image.value;
+        const image = e.currentTarget.image.files[0];
         const newBlog = {
             title,
             description,
             image,
         };
 
-        //LOGIC POST TO API DB WILL BE HERE SOON
+        //POST Data to API
+        const token = localStorage.getItem("token");
+        if (token) {
+            if (!newBlog.title.length) return alert("title cannot be empty!");
 
-        console.log("you add new blog:", newBlog);
+            const res = await postBlog(newBlog, token);
+            if (res.response?.statusText === "Unauthorized") {
+                localStorage.removeItem("token");
+                navigate("/login");
+            }
+
+            console.log("res postblog:", res);
+            navigate("/");
+        } else {
+            navigate("/login");
+        }
     };
     return (
         <>
