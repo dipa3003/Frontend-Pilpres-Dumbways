@@ -52,8 +52,6 @@ const FormAddBlog = () => {
                 <div className="bg-gray-300 flex mx-8 mb-8 py-4 rounded-lg">
                     <form onSubmit={(e) => handleAddBlog(e)} className="flex flex-col w-2/3 m-auto ">
                         <InputForm label={"Title"} type={"text"} name={"judul"} placeholder={"Blog title"} id={"title"} />
-                        {/* <InputForm label={"Nomor Urut"} type={"text"} name={"nomor"} placeholder={"nomor urut"} id={"nomor"} /> */}
-                        {/* <InputForm label={"Image"} type={"text"} name={"image"} placeholder={"image"} id={"image"} /> */}
 
                         <label htmlFor="description" className="block text-black text-sm font-bold mb-2">
                             Description

@@ -32,6 +32,11 @@ export default function Article() {
         }
     };
 
+    const handleEdit = async (id: number) => {
+        console.log("id handleEdit:", id);
+        navigate("/edit-blog", { state: { id } });
+    };
+
     return (
         <>
             <Navbar />
@@ -41,11 +46,11 @@ export default function Article() {
                     <Link to="/" className="text-xl font-semibold">
                         &larr; Beranda
                     </Link>
-                    <div className="flex justify-end gap-4">
-                        <Button type="button" onClick={() => {}} classCustom={"bg-lime-600 text-white rounded-full mt-6 w-32"}>
+                    <div className="flex justify-center gap-4">
+                        <Button type="button" onClick={() => handleEdit(id)} classCustom={"bg-lime-600 text-white rounded-full mt-6 w-32 opacity-60 hover:opacity-100"}>
                             Edit
                         </Button>
-                        <Button type="button" onClick={() => handleDelete(id)} classCustom={"bg-red-600 text-white rounded-full mt-6 w-32"}>
+                        <Button type="button" onClick={() => handleDelete(id)} classCustom={"bg-red-600 text-white rounded-full mt-6 w-32 opacity-60 hover:opacity-100"}>
                             Delete
                         </Button>
                     </div>

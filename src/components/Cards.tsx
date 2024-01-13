@@ -12,7 +12,7 @@ export default function Cards(Props: TBlogs) {
                     <p className="bg-red-600 text-white p-1 inline-block rounded-lg">{new Date(dateCreated).toDateString().toUpperCase()}</p>
                     <p>{id}</p>
                     <h1 className="text-md font-bold mt-2">
-                        <Link to="/article" preventScrollReset={false} state={{ date: dateCreated, title: title, author: author, description: description, image: image, id }}>
+                        <Link to="/article" preventScrollReset={false} state={{ date: dateCreated, title: title, author: author, description: description, image, id }}>
                             {title.substring(0, 62).toUpperCase()}...
                         </Link>
                     </h1>

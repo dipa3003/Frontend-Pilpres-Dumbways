@@ -21,7 +21,6 @@ export type TBlogs = {
 };
 
 export default function HomePage() {
-    // const [dataArticle, setDataArticle] = useState<TArtikel[] | null>(null);
     const [articles, setArticles] = useState<TBlogs[] | null>(null);
     const [mainArticle, setMainArticle] = useState<TBlogs | null>(null);
 
@@ -35,16 +34,11 @@ export default function HomePage() {
         }
         fetchData();
     }, []);
-    // console.log("data blogs dr api: ", blogs);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) navigate("/login");
     }, [navigate]);
-
-    // useEffect(() => {
-    //     setDataArticle(dataArticles);
-    // }, []);
 
     useEffect(() => {
         function handleFirst() {
